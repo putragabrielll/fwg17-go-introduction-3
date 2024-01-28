@@ -8,4 +8,6 @@ func main(){
 
 	// Task 1
 	Cetak(40)
+
+	// Task 2
 }

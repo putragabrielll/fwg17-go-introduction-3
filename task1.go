@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-
+import (
+	"fmt"
+	"sync"
+)
 
 // Struct
 type bilangan struct {
@@ -40,6 +42,7 @@ func isPrime(n int) bool { // 5
 
 
 func Cetak(angka int){
+	var wg sync.WaitGroup
 	temp_prima := []int{}
 	temp_ganjil := []int{}
 	temp_genap := []int{}
@@ -59,12 +62,31 @@ func Cetak(angka int){
         }
 	}
 
-	var data bilangan = bilangan{
+	data := bilangan{
 		prima: temp_prima,
 		ganjil: temp_ganjil,
 		genap: temp_genap,
 		fibonacci: 12,
 	}
 
-	fmt.Println("sudah masuk", data)
+	wg.Add(3)
+	go func() {
+		defer wg.Done() // menunggu pengeksekuasian suatu kode berakhir
+		fmt.Println(data.deretanPrima())
+	}()
+	go func() {
+		defer wg.Done()
+		fmt.Println(data.deretanGanjil())
+	}()
+	go func() {
+		defer wg.Done()
+		fmt.Println(data.deretanGenap())
+	}()
+	// go func() {
+	// 	defer wg.Done()
+	// 	fmt.Println(data.deretanFibonacci())
+	// }()
+	wg.Wait()
+
+	// fmt.Println(data.deretanGanjil())
 }
