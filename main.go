@@ -7,7 +7,13 @@ func main(){
 	fmt.Println("sudah berhasil instal go!")
 
 	// Task 1
-	Cetak(40)
+	// Cetak(40)
 
 	// Task 2
+	// TukarData()
+
+	// Task 3
+
+	// Try
+	Try()
 }

@@ -69,7 +69,7 @@ func Cetak(angka int){
 		fibonacci: 12,
 	}
 
-	wg.Add(3)
+	wg.Add(3) // ada berapa banyak proses Go Routine yg terjadi, jika ada 3 bikin value nya 3.
 	go func() {
 		defer wg.Done() // menunggu pengeksekuasian suatu kode berakhir
 		fmt.Println(data.deretanPrima())
