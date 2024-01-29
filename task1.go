@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	// "time"
 )
 
 // Struct
@@ -89,4 +90,5 @@ func Cetak(angka int){
 	wg.Wait()
 
 	// fmt.Println(data.deretanGanjil())
+	// time.Sleep(time.Second)
 }
