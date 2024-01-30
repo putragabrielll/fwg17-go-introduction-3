@@ -10,7 +10,7 @@ func main(){
 	// Cetak(40)
 
 	// Task 2
-	TukarData(40)
+	TukarData(10)
 
 	// Task 3
 
